@@ -207,17 +207,17 @@ body{
 
 .marquee-text{
   display:inline-block;
-  font-size:42px;
-  font-weight:700;
+  font-size:48px;
+  font-weight:800;
   color:white;
-  text-shadow:0 4px 15px rgba(0,0,0,0.6);
-  animation: marqueeMove 12s linear infinite;
+  text-shadow:0 6px 20px rgba(0,0,0,0.8);
+  animation: marqueeMove 18s linear infinite;
 }
 
 /* Animation */
 @keyframes marqueeMove{
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-200%); }
 }
 </style>
 </head>
@@ -311,3 +311,4 @@ sections.forEach(section => observer.observe(section));
 </body>
 
 </html>
+
