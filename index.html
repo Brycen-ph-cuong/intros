@@ -185,12 +185,62 @@ body{
     height:400px;
   }
 }
+
+/* PAGE 1 IMAGE WRAPPER */
+.image-wrapper{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+
+/* MARQUEE EFFECT */
+.marquee{
+  position:absolute;
+  top:30%;              /* vị trí 2/3 chiều cao */
+  left:0;
+  width:100%;
+  transform:translateY(-50%);
+  overflow:hidden;
+  white-space:nowrap;
+  padding:15px 0;
+}
+
+.marquee-text{
+  display:inline-block;
+  font-size:42px;
+  font-weight:700;
+  color:white;
+  text-shadow:0 4px 15px rgba(0,0,0,0.6);
+  animation: marqueeMove 12s linear infinite;
+}
+
+/* Animation */
+@keyframes marqueeMove{
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 </style>
 </head>
 
 <body>
 
 <!-- PAGE 1 -->
+<section class="section">
+  <div class="image-wrapper">
+    <img src="https://raw.githubusercontent.com/Brycen-ph-cuong/intros/refs/heads/main/ho.jpg" alt="Slide 2">
+
+    <div class="marquee">
+      <div class="marquee-text">
+        전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp; 
+        전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp;
+        전기 케이블 트레이 전시회 초청장
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAGE 2 -->
 <section class="section">
   <div class="hero">
     <h1>VIETBUILD 2026 건축박람회 초청</h1>
@@ -217,11 +267,6 @@ body{
       <p>◆ 전시품목 : CABLE TRAY / CABLE DUCT / RACE WAY</p>
     </div>
   </div>
-</section>
-
-<!-- PAGE 2 -->
-<section class="section">
-  <img src="https://raw.githubusercontent.com/Brycen-ph-cuong/intros/refs/heads/main/ho.jpg" alt="Slide 2">
 </section>
 
 <!-- PAGE 3 -->
@@ -264,4 +309,5 @@ sections.forEach(section => observer.observe(section));
 </script>
 
 </body>
+
 </html>
