@@ -193,31 +193,37 @@ body{
   height:100%;
 }
 
-/* MARQUEE EFFECT */
+/* MARQUEE */
 .marquee{
   position:absolute;
-  top:30%;              /* vị trí 2/3 chiều cao */
+  top:30%;
   left:0;
   width:100%;
   transform:translateY(-50%);
   overflow:hidden;
-  white-space:nowrap;
-  padding:15px 0;
 }
 
+/* TRACK */
+.marquee-track{
+  display:flex;
+  width:max-content;
+  animation: marqueeLoop 7s linear infinite;
+}
+
+/* TEXT */
 .marquee-text{
-  display:inline-block;
   font-size:48px;
   font-weight:800;
   color:white;
+  white-space:nowrap;
+  margin-right:150px;
   text-shadow:0 6px 20px rgba(0,0,0,0.8);
-  animation: marqueeMove 18s linear infinite;
 }
 
-/* Animation */
-@keyframes marqueeMove{
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-200%); }
+/* LOOP ANIMATION */
+@keyframes marqueeLoop{
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 </style>
 </head>
@@ -229,13 +235,16 @@ body{
   <div class="image-wrapper">
     <img src="https://raw.githubusercontent.com/Brycen-ph-cuong/intros/refs/heads/main/ho.jpg" alt="Slide 2">
 
-    <div class="marquee">
-      <div class="marquee-text">
-        전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp; 
-        전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp;
-        전기 케이블 트레이 전시회 초청장
-      </div>
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-text">
+      전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp;
     </div>
+    <div class="marquee-text">
+      전기 케이블 트레이 전시회 초청장 &nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+</div>
 
   </div>
 </section>
@@ -311,4 +320,3 @@ sections.forEach(section => observer.observe(section));
 </body>
 
 </html>
-
